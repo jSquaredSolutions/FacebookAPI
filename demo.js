@@ -6,8 +6,7 @@ var server = http.createServer(function(request, response) {
     switch (path) {  
         case '/':  
             response.writeHead(200, {  
-                'Content-Type': 'text/plain',
-                'X-Frame-Options': 'allow'      
+                'Content-Type': 'text/plain'   
             });  
             response.write("This is Test Message.");  
             response.end();  
