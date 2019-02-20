@@ -27,9 +27,16 @@
                     js.src = "https://connect.facebook.net/en_US/sdk.js";
                     fjs.parentNode.insertBefore(js, fjs);
                 }(document, 'script', 'facebook-jssdk'));
+
                 function statusChangeCallback(response) {
-                    debugger;
+                    if(response.status === "not_authorized"){
+                    FB.login();
+                    console.log(response.status);
+                    }else{
+                        FB.login();
+                    }
                 };
+
             </script>
 
     <h1>My Fifading</h1>

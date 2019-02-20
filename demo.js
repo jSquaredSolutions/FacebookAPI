@@ -19,8 +19,7 @@ var server = http.createServer(function(request, response) {
                     response.end();  
                 } else {  
                     response.writeHead(200, {  
-                        'Content-Type': 'text/html',
-                        'X-Frame-Options': 'ALLOW'  
+                        'Content-Type': 'text/html'  
                     });  
                     response.write(data);  
                     response.end();  
@@ -34,4 +33,4 @@ var server = http.createServer(function(request, response) {
             break;  
     }  
 });  
-server.listen(8082);
+server.listen(8080);
