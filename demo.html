@@ -3,7 +3,6 @@
 
 <head>
     <title>Page Title</title>
-   
 </head>
 
 <body>
@@ -17,22 +16,27 @@
                         version: 'v3.2'
                     });
                 };
-            //    FB.getLoginStatus(function (response) {
-            //        statusChangeCallback(response);
-            //    });
+/*
+                FB.getLoginStatus(function (response) {
+                    statusChangeCallback(response);
+                }); */
+
                 (function (d, s, id) {
                     var js, fjs = d.getElementsByTagName(s)[0];
                     if (d.getElementById(id)) { return; }
                     js = d.createElement(s); js.id = id;
                     js.src = "https://connect.facebook.net/en_US/sdk.js";
                     fjs.parentNode.insertBefore(js, fjs);
+                    console.log("self_Invoke");
                 }(document, 'script', 'facebook-jssdk'));
 
                 function statusChangeCallback(response) {
+                    console.log("Started");
                     if(response.status === "not_authorized"){
                     FB.login();
                     console.log(response.status);
                     }else{
+                        console.log("Authorized");
                         FB.login();
                     }
                 };
