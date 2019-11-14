@@ -1,7 +1,17 @@
-var http = require('http');  
+/*
+I need to access the API via https
+Example: https://localhost:8080/demo.html
+*/
+var https = require('https');  
 var url = require('url');  
 var fs = require('fs');  
-var server = http.createServer(function(request, response) {  
+
+const options = {
+    key: fs.readFileSync('key.pem'),
+    cert: fs.readFileSync('cert.pem')
+  };
+
+var server = https.createServer(options, function(request, response) {  
     var path = url.parse(request.url).pathname;  
     switch (path) {  
         case '/':  

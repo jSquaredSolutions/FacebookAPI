@@ -11,3 +11,4 @@ In the console window
 once I added the EPA app ID I was then asked to log in (see this screen shot capture.gif)
 
 It also says: This doesn't let the app post to Facebook
+
