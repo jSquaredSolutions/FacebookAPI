@@ -12,3 +12,14 @@ once I added the EPA app ID I was then asked to log in (see this screen shot cap
 
 It also says: This doesn't let the app post to Facebook
 
+I used a node module to configure a cert and key for this project to work. The module is called "OpenSSL", the output is the cert.pem and key.pem. This may need to be configured if the project is run on a different laptop. 
+
+To run this project use: node demo.js
+Then localhost:8080/demo.html 
+ 
+
+ Once authenication is complete, query for data using something similar to this: 
+
+FB.api('/nccttoday', function (response1) {
+console.log(response1.error.message);
+});
